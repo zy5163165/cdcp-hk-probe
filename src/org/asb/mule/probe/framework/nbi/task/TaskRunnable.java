@@ -3,6 +3,8 @@ package org.asb.mule.probe.framework.nbi.task;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
@@ -50,7 +52,9 @@ public class TaskRunnable implements Runnable {
 	public void run() {
 		if (task != null) {
 			try {
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 				System.out.println(Thread.currentThread().getName() + " start...." + task.getClass().getName());
+				System.out.println(format.format(new Date()));
 				returnObject = task.excute();
 			} catch (Throwable e) {
 				logger.error("Failed execute task : " + task);

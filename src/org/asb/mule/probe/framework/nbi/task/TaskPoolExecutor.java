@@ -113,7 +113,7 @@ public class TaskPoolExecutor {
 				@Override
 				public Vector<BObject> excute() {
 					try {
-						Thread.sleep(1000l);
+						Thread.sleep(10000l);
 						return new Vector<BObject>();
 					} catch (InterruptedException e) {
 
